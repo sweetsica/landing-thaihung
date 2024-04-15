@@ -573,11 +573,12 @@ if(isset($_POST['submit'])){
                         <input type="text" name="file" minlength="10"><span class="content__form-placeholder">DOCUMENT LINK</span>
                       </label>
                       <div class="content__form-btn">
-                        <button class="btn btn--arrow" type="submit">
+                        <input type="submit" name="submit" value="Submit">
+                        <!-- <button class="btn btn--arrow" type="submit">
                           <svg>
                             <use xlink:href="./svg/sprite.svg#arrow"></use>
                           </svg>
-                        </button>
+                        </button> -->
                       </div>
                     </div>
                   </form>
