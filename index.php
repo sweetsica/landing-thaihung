@@ -2,19 +2,20 @@
 if(isset($_POST['submit'])){
     $to = "baonn@doppelherz.vn"; // this is your Email address
     $from = "baonn@sweetsica.com"; // this is the sender's Email address
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $file = ($_POST['file'] ? $_POST['file'] : '');
     $subject = "Lời nhắn từ catalogue Thái Hưng!";
     $subject2 = "Copy of your form submission";
-    $message = "- Họ tên: ". $first_name . " " . $last_name . "\n\n" . "- Email: " . $_POST['email'] . "\n\n" ."- Lời nhắn:" . "\n\n" . $_POST['message'];
+    $message = "- Họ tên: ". $name . " " . $email . "\n\n" . "- Email: " . $_POST['email'] . "\n\n" ."- Lời nhắn:" . "\n\n" . $_POST['msg'] . "\n\n" ."- File đính kèm: " . $_POST['file'];
 
-    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['msg'];
 
     $headers = "From:" . $from;
     $headers2 = "From:" . $to;
     mail($to,$subject,$message,$headers);
     mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-    echo "Gửi tin nhắn thành công! Cảm ơn " . $first_name . ", chúng tôi sẽ liên hệ bạn trong thời gian sớm nhất.";
+    echo "Gửi tin nhắn thành công! Cảm ơn " . $name . ", chúng tôi sẽ liên hệ bạn trong thời gian sớm nhất.";
     // You can also use header('Location: thank_you.php'); to redirect to another page.
     }
 ?>
@@ -564,7 +565,7 @@ if(isset($_POST['submit'])){
                         <input type="text" name="name"><span class="content__form-placeholder">name</span>
                       </label>
                       <label class="content__form-input">
-                        <input type="email" name="emal" required=""><span class="content__form-placeholder">EMAIL *</span>
+                        <input type="email" name="email" required=""><span class="content__form-placeholder">EMAIL *</span>
                       </label>
                       <label class="content__form-input">
                         <input type="text" name="msg" required="" minlength="10"><span class="content__form-placeholder">MESSAGE *</span>
