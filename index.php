@@ -1,12 +1,13 @@
 <?php 
-if($_POST['submit']){
+if(isset($_POST['submit'])){
     $to = "baonn@doppelherz.vn"; // this is your Email address
     $from = "baonn@sweetsica.com"; // this is the sender's Email address
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $subject = "Lời nhắn từ catalogue Thái Hưng!";
     $subject2 = "Copy of your form submission";
-    $message = "- Họ tên: ". $first_name . " " . $last_name . "\n\n" . "- Email: " $_POST['email'] . "\n\n" ."- Lời nhắn:" . "\n\n" . $_POST['message'];
+    $message = "- Họ tên: ". $first_name . " " . $last_name . "\n\n" . "- Email: " . $_POST['email'] . "\n\n" ."- Lời nhắn:" . "\n\n" . $_POST['message'];
+
     $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
 
     $headers = "From:" . $from;
