@@ -1,7 +1,7 @@
 <php
   if(isset($_POST['submit'])){
       $to = "baonn@doppelherz.vn"; // this is your Email address
-      $from = "baonn@sweetsica.com"; // this is the sender's Email address
+      $from = "about@tbht.vn"; // this is the sender's Email address
       $file = ($_POST['file'] ? $_POST['file'] : "");
       $first_name = $_POST['first_name'];
       $last_name = $_POST['last_name'];
